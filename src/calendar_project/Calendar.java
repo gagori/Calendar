@@ -8,7 +8,6 @@ public class Calendar {
 	
 	public int getMaxDaysOfMonth(int month) {
 		return MAX_DAYS[month -1];
-	
 		}
 		
 	
@@ -25,16 +24,21 @@ public class Calendar {
 	
 	public static void main(String[] args) {
 		// 숫자를 입력받아 해당하는 달의 최대 일수를 출력하는 프로그램
-		// 입력
 		Scanner scn = new Scanner(System.in);
 		Calendar calendar = new Calendar();
-		System.out.println("달을 입력하세요");
-		int month = scn.nextInt();                              
 		
-		System.out.printf("%d 월은 %d일 까지 있습니다.\n", month, calendar.getMaxDaysOfMonth(month));   //미리 만들어 두었던 함수 쓰기
+		System.out.println("반복 횟수를 입력하세요.");
+		int repeat = scn.nextInt();
+		
+		for(int i =0; i < repeat; i++) {
+			System.out.println("달을 입력하세요");
+			int month = scn.nextInt();                              
+			System.out.printf("%d 월은 %d일 까지 있습니다.\n", month, calendar.getMaxDaysOfMonth(month));   //미리 만들어 두었던 함수 쓰기
+		}
+		
+		System.out.println("Bye~");
 		scn.close();
-		
-		calendar.printSampleCalendar();
+//		calendar.printSampleCalendar();
 		
 		}
 		
