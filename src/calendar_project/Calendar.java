@@ -3,6 +3,13 @@ package calendar_project;
 import java.util.Scanner;
 
 public class Calendar {
+
+	private static final int[] MAX_DAYS =  {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};  
+	
+	public int getMaxDaysOfMonth(int month) {           //함수를 미리 만들어주기 : (int)를 입력받아서 int로 출력해준다!!
+		return MAX_DAYS[month -1];
+	}
+	
 	public static void main(String[] args) {
 		System.out.println("   Hello, Calendar\n");
 		System.out.println("일 월  화  수  목  금  토");
@@ -16,12 +23,11 @@ public class Calendar {
 		// 숫자를 입력받아 해당하는 달의 최대 일수를 출력하는 프로그램
 		// 입력
 		Scanner scn = new Scanner(System.in);
+		Calendar calendar = new Calendar();
 		System.out.println("\n달을 입력하세요");
-		int month = scn.nextInt();                                          //scn.next()는 string을 받는 반면, scn.nextInt()는 Int를 받는다.
+		int month = scn.nextInt();                              
 		
-		int[] maxDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};   //배열 표기법 int[], 문자열 표기법 String[]
-		
-		System.out.printf("%d 월은 %d일 까지 있습니다.\n", month, maxDays[month -1]);
+		System.out.printf("%d 월은 %d일 까지 있습니다.\n", month, calendar.getMaxDaysOfMonth(month));   //미리 만들어 두었던 함수 쓰기
 		scn.close();
 		
 		}
