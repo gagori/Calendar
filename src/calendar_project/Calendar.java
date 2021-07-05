@@ -24,21 +24,34 @@ public class Calendar {
 	
 	public static void main(String[] args) {
 		// 숫자를 입력받아 해당하는 달의 최대 일수를 출력하는 프로그램
+		
+		String PROMPT = "cal> ";                    //">"프롬프트 커서가 옮겨가는 것을 의미~
 		Scanner scn = new Scanner(System.in);
 		Calendar calendar = new Calendar();
 		
-		System.out.println("반복 횟수를 입력하세요.");
-		int repeat = scn.nextInt();
 		
-		for(int i =0; i < repeat; i++) {
+		
+		
+		
+//		System.out.println("반복 횟수를 입력하세요.");       반복횟수 정해지지 않는다면???
+		
+		int month = 1;
+		while(true) {                                 //반복 횟수를 모를 때 while문 사용, true면 무한루프
 			System.out.println("달을 입력하세요");
-			int month = scn.nextInt();                              
+			System.out.print(PROMPT);
+			month = scn.nextInt();                       
+			if (month == -1) {                              //-1만나면 루프를 빠져나가라.
+				break;
+			}
+			
+			if (month >12) {								//12넘어가는 숫자가 나오면 continue, 루프의 처음으로 돌아가라.
+				continue;
+			}
 			System.out.printf("%d 월은 %d일 까지 있습니다.\n", month, calendar.getMaxDaysOfMonth(month));   //미리 만들어 두었던 함수 쓰기
 		}
 		
 		System.out.println("Bye~");
 		scn.close();
-//		calendar.printSampleCalendar();
 		
 		}
 		
