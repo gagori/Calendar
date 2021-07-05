@@ -4,26 +4,23 @@ import java.util.Scanner;
 
 public class CaendarWorkspace {
 	public static void main(String[] args) {
-		//입력: 키보드로 두 수의 입력을 받는다.
-		int a,b;
-		Scanner scanner = new Scanner(System.in);   //System.in 으로 키보드 입력을 받을 수 있다.  오픈!
-		String s1, s2;                              
-		System.out.println("두 수를 입력해 주세요.");
-		s1 = scanner.next();                             // string 만 올 수 있음, 에러확엔해보기, 따라서 s1을 따로 설정한것
-		s2 = scanner.next();
-//		System.out.println(s1 +","+ s2);                //string 이므로 abc, 만원 등 문자도 입력가능
-		
-		a = Integer.parseInt(s1);                      //이제 int로 형변환
-		b = Integer.parseInt(s2);
-//		System.out.println(a +","+ b);                   //이제 정수만 입력가능.
-		
-		
-		//출력: 화면에 두 수의 합을 출력한다.
-//		int c = a + b;
-//		System.out.println("두 수의 합은 "+(a+b)+ " 입니다.");
-		System.out.printf("%d와 %d의 합은 %d입니다.", a,b, a+b);    //%d에 정수를 넣을 수 있음
-		scanner.close();                                                        //클로즈!!
-		
-	}
+		// 입력
+		String s1, s2;
+		int i1, i2;
+		System.out.println("두 수를 입력하세요.");          // 아래문장 위에 올라와야 첫 화면에 뜬다!! 해보기
+		Scanner scn = new Scanner(System.in);           //여기서 부터 키보드 입력해야 뜨는것 왜냐면 System.in 출력받는 역할 하므로
+		s1 = scn.next();                              //출력 받을 때 string 만 가능(?)
+		s2 = scn.next(); 
+		i1 = Integer.parseInt(s1);                    //이제 int로 형변환 해줌.
+		i2 = Integer.parseInt(s2);    
 
+		// 출력
+//		System.out.println("%d와 %d의 합은 %d 입니다.", i1, i2, i1+i2);               //즉 얘는 입력해야 뜸. // prinln에서는 이게 동작 ㄴㄴ 
+		System.out.printf("%d와 %d의 합은 %d입니다.", i1, i2, i1+i2);
+		scn.close();
+		
+		
+				
+
+	}
 }
