@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class Prompt {
 	
-	public int parseDay(String weak) {
-		if(weak.equals("일")) return 0;
-		 else if(weak.equals("월")) return 1;
-		 else if(weak.equals("화")) return 2;
-		 else if(weak.equals("수")) return 3;
-		 else if(weak.equals("목")) return 4;
-		 else if(weak.equals("금")) return 5;
-		 else if(weak.equals("토")) return 6;
+	public int parseDay(String week) {
+		if(week.equals("일")) return 0;
+		 else if(week.equals("월")) return 1;
+		 else if(week.equals("화")) return 2;
+		 else if(week.equals("수")) return 3;
+		 else if(week.equals("목")) return 4;
+		 else if(week.equals("금")) return 5;
+		 else if(week.equals("토")) return 6;
 		 else
 			 return 0;                   //혹시나 이상한거 있으면 일요일로 칩시다~		
 	}
@@ -22,7 +22,7 @@ public class Prompt {
 		
 		int month = 1;         //사실 디폴트 값은 아무거나 해도 상관 없음
 		int year = 2015;
-		int weakday = 0;
+		
 		
 		while(true) {                                
 			System.out.println("년도을 입력하세요. (exit: -1)");
@@ -35,9 +35,6 @@ public class Prompt {
 			System.out.println("달을 입력하세요.");
 			System.out.print("MONTH> ");
 			month = scn.nextInt();     
-			System.out.println("첫째 날의 요일을 입력하세요. (일 월 화 수 목 금 토)");
-			String str_weakday = scn.next();
-			weakday = parseDay(str_weakday);
 			
 	
 			if (month >12 || month <1) {
@@ -45,7 +42,7 @@ public class Prompt {
 				continue;                                    //continue 는 무조건 루프의 마지막에 와야함
 			}
 			
-			cal.printCalendar(year, month, weakday);
+			cal.printCalendar(year, month);
 
 		}
 		System.out.println("Bye~");
